@@ -1,6 +1,9 @@
+"use client";
+import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
-import { FC } from "react";
+import { usePathname } from "next/navigation";
+import { FC, useEffect, useState } from "react";
 
 type NavbarLinkPropTypes = {
   href: string;
@@ -9,17 +12,32 @@ type NavbarLinkPropTypes = {
 };
 
 const NavbarLink: FC<NavbarLinkPropTypes> = ({ href, icon, title }) => {
+  const pathname = usePathname();
+  const [isActiveLink, setIsActiveLink] = useState<boolean>(false);
+
+  useEffect(() => {
+    console.log("test", pathname, href);
+    setIsActiveLink(pathname === href);
+  }, [pathname]);
+
   return (
-    <li className="hover:bg-white/15 relative group flex flex-col items-center justify-center text-center rounded-md p-2">
+    <li
+      className={clsx(
+        "hover:bg-white/15 relative group flex flex-col items-center justify-center text-center p-2 rounded-full",
+        {
+          "bg-white/15": isActiveLink,
+        }
+      )}
+    >
       <Link
         href={href}
-        className="h-6 w-6 aspect-square relative"
+        className="h-6 w-6 aspect-square relative hover:float"
         aria-label={title}
       >
         <Image src={icon} alt={title} fill sizes="20vw" />
       </Link>
       <span
-        className="text-white bg-black/30 absolute mx-auto top-0 group-hover:translate-y-[250%] transition-all -translate-y-full duration-300 opacity-0 group-hover:opacity-100 text-lg font-semibold"
+        className="text-white bg-white/15 px-3 py-[0.5]  rounded-xl absolute mx-auto bottom-0 group-hover:translate-y-[145%] transition-all opacity-0 invisible group-hover:visible group-hover:scale-100 scale-0 group-hover:opacity-100 duration-300 text-md font-semibold"
         role="tooltip"
         aria-hidden="true"
       >
