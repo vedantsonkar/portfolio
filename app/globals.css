@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @theme {
   --color-background: var(--background);
@@ -20,6 +20,31 @@
   ::backdrop,
   ::file-selector-button {
     border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+@layer utilities {
+  @keyframes float {
+    0% {
+      transform: translateY(0) rotate(0deg);
+    }
+    25% {
+      transform: translateY(-3px) rotate(15deg);
+    }
+    50% {
+      transform: translateY(-4px) rotate(-15deg);
+      scale: 1.08;
+    }
+    75% {
+      transform: translateY(-3px) rotate(2deg);
+    }
+    100% {
+      transform: translateY(0) rotate(0deg);
+    }
+  }
+
+  .hover\:float:hover {
+    animation: float 1.5s ease-in-out infinite;
   }
 }
 
