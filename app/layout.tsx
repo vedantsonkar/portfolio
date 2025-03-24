@@ -4,7 +4,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
-import Header from "@/components/Navbar/Header";
+import Header from "@/components/Header/Header";
 import { SEO_KEYWORDS, YEARS_OF_EXPERIENCE } from "@/constants";
 import Footer from "@/components/Footer/Footer";
 
@@ -22,6 +22,7 @@ export const metadata: Metadata = {
   title: "Vedant Sonkar | Portfolio",
   description: `Hello Recruiters and fellow developers. I am Vedant Sonkar, a Full Stack Developer with ${YEARS_OF_EXPERIENCE}+ years of experience in building web/mobile applications.`,
   keywords: SEO_KEYWORDS,
+  metadataBase: new URL("https://www.vedantsonkar.in"),
   openGraph: {
     title: "Vedant Sonkar | Portfolio",
     description: `Hello Recruiters and fellow developers. I am Vedant Sonkar, a Full Stack Developer with ${YEARS_OF_EXPERIENCE}+ years of experience in building web/mobile applications.`,
@@ -29,25 +30,72 @@ export const metadata: Metadata = {
     url: "https://www.vedantsonkar.in",
     images: [
       {
-        url: "/VedantSonkarPortfolioLogo.png",
+        url: "https://www.vedantsonkar.in/VedantSonkarPortfolioLogo.png",
         width: 800,
         height: 600,
         alt: "Vedant Sonkar Portfolio",
       },
     ],
+    siteName: "Vedant Sonkar Portfolio",
   },
   twitter: {
     card: "summary_large_image",
     site: "@yourTwitterHandle",
     title: "Vedant Sonkar | Portfolio",
     description: `Hello Recruiters and fellow developers. I am Vedant Sonkar, a Full Stack Developer with ${YEARS_OF_EXPERIENCE}+ years of experience in building web/mobile applications.`,
-    images: ["/VedantSonkarPortfolioLogo.png"],
+    images: ["https://www.vedantsonkar.in/VedantSonkarPortfolioLogo.png"],
   },
   robots: {
     index: true,
     follow: true,
   },
   alternates: { canonical: "https://www.vedantsonkar.in" },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Vedant Sonkar",
+  url: "https://www.vedantsonkar.in",
+  image: "https://www.vedantsonkar.in/VedantSonkarPortfolioLogo.png",
+  sameAs: [
+    "https://www.linkedin.com/in/vedantsonkar",
+    "https://github.com/vedantsonkar",
+  ],
+  jobTitle: "Full Stack Developer",
+  worksFor: {
+    "@type": "Organization",
+    name: "Cornerstone OnDemand",
+  },
+  alumniOf: {
+    "@type": "CollegeOrUniversity",
+    name: "University of Mumbai",
+    url: "https://www.university-website.com",
+  },
+  description: `Hello Recruiters and fellow developers. I am Vedant Sonkar, a Full Stack Developer with ${YEARS_OF_EXPERIENCE}+ years of experience in building web/mobile applications.`,
+  knowsAbout: [
+    "React.js",
+    "Node.js",
+    "TypeScript",
+    "Next.js",
+    "React Native",
+    "PostgreSQL",
+    "Frontend Development",
+    "Bikes",
+    "Backend Development",
+    "Gaming",
+  ],
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "Work",
+    email: "vedantsonkar0810@gmail.com",
+    url: "https://www.vedantsonkar.in",
+  },
+  hasOccupation: {
+    "@type": "Occupation",
+    name: "Associate Software Engineer",
+    description: "Developing high-performance web applications.",
+  },
 };
 
 export default function RootLayout({
@@ -57,6 +105,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
