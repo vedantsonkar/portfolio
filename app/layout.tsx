@@ -70,7 +70,7 @@ const jsonLd = {
   alumniOf: {
     "@type": "CollegeOrUniversity",
     name: "University of Mumbai",
-    url: "https://www.university-website.com",
+    url: "https://mu.ac.in/",
   },
   description: `Hello Recruiters and fellow developers. I am Vedant Sonkar, a Full Stack Developer with ${YEARS_OF_EXPERIENCE}+ years of experience in building web/mobile applications.`,
   knowsAbout: [
