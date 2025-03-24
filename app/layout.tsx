@@ -5,7 +5,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
 import Header from "@/components/Navbar/Header";
-import { YEARS_OF_EXPERIENCE } from "@/constants";
+import { SEO_KEYWORDS, YEARS_OF_EXPERIENCE } from "@/constants";
 import Footer from "@/components/Footer/Footer";
 
 const geistSans = Geist({
@@ -21,6 +21,33 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Vedant Sonkar | Portfolio",
   description: `Hello Recruiters and fellow developers. I am Vedant Sonkar, a Full Stack Developer with ${YEARS_OF_EXPERIENCE}+ years of experience in building web/mobile applications.`,
+  keywords: SEO_KEYWORDS,
+  openGraph: {
+    title: "Vedant Sonkar | Portfolio",
+    description: `Hello Recruiters and fellow developers. I am Vedant Sonkar, a Full Stack Developer with ${YEARS_OF_EXPERIENCE}+ years of experience in building web/mobile applications.`,
+    type: "website",
+    url: "https://www.vedantsonkar.in",
+    images: [
+      {
+        url: "/VedantSonkarPortfolioLogo.png",
+        width: 800,
+        height: 600,
+        alt: "Vedant Sonkar Portfolio",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@yourTwitterHandle",
+    title: "Vedant Sonkar | Portfolio",
+    description: `Hello Recruiters and fellow developers. I am Vedant Sonkar, a Full Stack Developer with ${YEARS_OF_EXPERIENCE}+ years of experience in building web/mobile applications.`,
+    images: ["/VedantSonkarPortfolioLogo.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: { canonical: "https://www.vedantsonkar.in" },
 };
 
 export default function RootLayout({
