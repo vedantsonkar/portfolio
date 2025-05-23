@@ -1,3 +1,4 @@
+import HeadshotSocialsSection from "@/components/Homepage/HeadshotSocialsSection";
 import SummarySection from "@/components/Homepage/SummarySection";
 
 export default function Home() {
@@ -7,8 +8,8 @@ export default function Home() {
       className="font-[family-name:var(--font-geist-sans)]"
       style={{ background: "var(--background)" }}
     >
-      <div className="mx-auto max-w-7xl [1600px]:max-w-9xl px-4 sm:px-6 lg:px-8 flex flex-col items-center sm:items-start justify-center gap-x-16 sm:flex-row gap-y-14">
-        <div className="dark:bg-white/90 bg-black/80 w-[340px] h-[420px] sm:h-[640px] rounded-2xl" />
+      <div className="mx-auto max-w-7xl [1600px]:max-w-9xl px-4 sm:px-6 lg:px-8 flex flex-col items-center lg:items-start justify-center gap-x-16 lg:flex-row gap-y-14">
+        <HeadshotSocialsSection />
         <SummarySection />
       </div>
     </main>

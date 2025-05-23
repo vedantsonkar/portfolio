@@ -1,6 +1,6 @@
 const SummarySection = () => {
   return (
-    <div className="flex flex-col items-center sm:items-start justify-start gap-y-8 max-w-4xl text-center sm:text-left">
+    <div className="flex flex-col items-center lg:items-start justify-start gap-y-8 max-w-4xl text-center lg:text-left">
       <h1 className="text-6xl sm:text-8xl [1600px]:text-9xl font-bold leading-[0.85]">
         SOFTWARE
         <br />
