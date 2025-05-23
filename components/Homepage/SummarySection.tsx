@@ -1,6 +1,8 @@
+import NumbersSection from "./NumbersSection";
+
 const SummarySection = () => {
   return (
-    <div className="flex flex-col items-center lg:items-start justify-start gap-y-8 max-w-4xl text-center lg:text-left">
+    <section className="flex flex-col items-center lg:items-start justify-start gap-y-8 max-w-4xl text-center lg:text-left">
       <h1 className="text-6xl sm:text-8xl [1600px]:text-9xl font-bold leading-[0.85]">
         SOFTWARE
         <br />
@@ -11,7 +13,8 @@ const SummarySection = () => {
         in building robust, scalable applications and continually explore the
         frontiers of AI/ML to create intelligent, impactful solutions.
       </h2>
-    </div>
+      <NumbersSection />
+    </section>
   );
 };
 
