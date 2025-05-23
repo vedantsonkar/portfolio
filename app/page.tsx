@@ -1,10 +1,11 @@
+import SummarySection from "@/components/Homepage/SummarySection";
+
 export default function Home() {
   return (
-    <main className="font-[family-name:var(--font-geist-sans)]">
-      <div className="mx-auto max-w-7xl [1600px]:max-w-9xl px-4 sm:px-6 lg:px-8 py-24 text-center top-1/2 transform translate-y-1/2">
-        <h1 className="text-6xl sm:text-8xl [1600px]:text-9xl font-bold">
-          Portfolio Coming Soon!
-        </h1>
+    <main role="main" className="font-[family-name:var(--font-geist-sans)]">
+      <div className="mx-auto max-w-7xl [1600px]:max-w-9xl px-4 sm:px-6 lg:px-8 flex flex-col items-center sm:items-start justify-center gap-x-16 sm:flex-row gap-y-14">
+        <div className="dark:bg-white/90 bg-black/80 w-[340px] h-[520px] sm:h-[640px] rounded-2xl" />
+        <SummarySection />
       </div>
     </main>
   );
