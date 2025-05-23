@@ -16,7 +16,6 @@ const NavbarLink: FC<NavbarLinkPropTypes> = ({ href, icon, title }) => {
   const [isActiveLink, setIsActiveLink] = useState<boolean>(false);
 
   useEffect(() => {
-    console.log("test", pathname, href);
     setIsActiveLink(pathname === href);
   }, [href, pathname]);
 
