@@ -1,9 +1,6 @@
-"use client";
-import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { FC, useEffect, useState } from "react";
+import { FC } from "react";
 
 type NavbarLinkPropTypes = {
   href: string;
@@ -12,19 +9,8 @@ type NavbarLinkPropTypes = {
 };
 
 const NavbarLink: FC<NavbarLinkPropTypes> = ({ href, icon, title }) => {
-  const pathname = usePathname();
-  const [isActiveLink, setIsActiveLink] = useState<boolean>(false);
-
-  useEffect(() => {
-    setIsActiveLink(pathname === href);
-  }, [href, pathname]);
-
   return (
-    <li
-      className={clsx(
-        "hover:bg-black/15 dark:hover:bg-white/45 relative group flex flex-col items-center justify-center text-center p-2 rounded-full"
-      )}
-    >
+    <li className="hover:bg-black/15 dark:hover:bg-white/45 relative group flex flex-col items-center justify-center text-center p-2 rounded-full">
       <Link
         href={href}
         className="h-6 w-6 aspect-square relative float"
