@@ -5,7 +5,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
 import Header from "@/components/Header/Header";
-import { SEO_KEYWORDS, YEARS_OF_EXPERIENCE } from "@/constants";
+import { SEO_KEYWORDS, SOCIAL_LINKS, YEARS_OF_EXPERIENCE } from "@/constants";
 import Footer from "@/components/Footer/Footer";
 
 const geistSans = Geist({
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@yourTwitterHandle",
+    site: "@vedant_sonkar",
     title: "Vedant Sonkar | Portfolio",
     description: `Hello Recruiters and fellow developers. I am Vedant Sonkar, a Full Stack Developer with ${YEARS_OF_EXPERIENCE}+ years of experience in building web/mobile applications.`,
     images: ["https://www.vedantsonkar.in/VedantSonkarPortfolioLogo.png"],
@@ -58,10 +58,7 @@ const jsonLd = {
   name: "Vedant Sonkar",
   url: "https://www.vedantsonkar.in",
   image: "https://www.vedantsonkar.in/VedantSonkarPortfolioLogo.png",
-  sameAs: [
-    "https://www.linkedin.com/in/vedantsonkar",
-    "https://github.com/vedantsonkar",
-  ],
+  sameAs: Object.values(SOCIAL_LINKS),
   jobTitle: "Full Stack Developer",
   worksFor: {
     "@type": "Organization",
@@ -112,7 +109,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased py-32 sm:py-48`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased py-32 sm:py-36 2xl:py-48`}
       >
         <Header />
         {children}

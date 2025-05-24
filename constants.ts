@@ -69,3 +69,10 @@ export const SEO_KEYWORDS = [
   "vedant sonkar fullstack",
   "vedant sonkar UI",
 ];
+
+export const SOCIAL_LINKS = {
+  linkedin: "https://www.linkedin.com/in/vedantsonkar",
+  github: "https://www.github.com/vedantsonkar",
+  instagram: "https://www.instagram.com/vedantsonkarr/",
+  x: "https://x.com/vedant_sonkar",
+};

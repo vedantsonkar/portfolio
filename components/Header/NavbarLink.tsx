@@ -22,10 +22,7 @@ const NavbarLink: FC<NavbarLinkPropTypes> = ({ href, icon, title }) => {
   return (
     <li
       className={clsx(
-        "hover:bg-black/15 dark:hover:bg-white/45 relative group flex flex-col items-center justify-center text-center p-2 rounded-full",
-        {
-          "bg-black/15 dark:bg-white/45": isActiveLink,
-        }
+        "hover:bg-black/15 dark:hover:bg-white/45 relative group flex flex-col items-center justify-center text-center p-2 rounded-full"
       )}
     >
       <Link

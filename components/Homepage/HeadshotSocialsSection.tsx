@@ -1,9 +1,11 @@
 import Image from "next/image";
+import Link from "next/link";
+import { SOCIAL_LINKS } from "@/constants";
 
 const HeadshotSocialsSection = () => {
   return (
     <section
-      className="dark:bg-white/90 bg-black/80 w-[340px] h-[490px] sm:h-[540px] rounded-2xl py-10 px-8 flex flex-col items-center justify-between relative overflow-hidden"
+      className="dark:bg-white/90 bg-black/80 w-[340px] h-[520px] sm:h-[590px] rounded-2xl max-lg:pt-10  max-lg:pb-6 lg:py-10 px-8 flex flex-col items-center justify-between relative overflow-hidden"
       aria-labelledby="headshot-section-title"
       aria-describedby="headshot-section-desc"
     >
@@ -39,7 +41,7 @@ const HeadshotSocialsSection = () => {
       />
       <div className="aspect-square rounded-2xl w-64 relative mx-auto">
         <Image
-          src="/Headshot-Vedant.jpg"
+          src="/Headshot.jpg"
           alt="Headshot of Vedant Sonkar"
           fill
           className="rounded-2xl select-none pointer-events-none object-cover"
@@ -63,6 +65,68 @@ const HeadshotSocialsSection = () => {
           Fullstack Software Engineer passionate about AI/ML and creative
           problem solving.
         </h2>
+        <div className="flex w-full justify-center items-center gap-4">
+          <Link
+            href={SOCIAL_LINKS.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white hover:text-gray-300 transition-colors duration-200"
+            aria-label="LinkedIn Profile"
+          >
+            <Image
+              src="/socials/LinkedinLogo.svg"
+              alt="LinkedIn Icon"
+              width={24}
+              height={24}
+              className="inline-block invert dark:invert-0"
+            />
+          </Link>
+          <Link
+            href={SOCIAL_LINKS.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white hover:text-gray-300 transition-colors duration-200"
+            aria-label="Github Profile"
+          >
+            <Image
+              src="/socials/GithubLogo.svg"
+              alt="Github Icon"
+              width={24}
+              height={24}
+              className="inline-block invert dark:invert-0"
+            />
+          </Link>
+          <Link
+            href={SOCIAL_LINKS.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white hover:text-gray-300 transition-colors duration-200"
+            aria-label="Instagram Profile"
+          >
+            <Image
+              src="/socials/InstagramLogo.svg"
+              alt="Instagram Icon"
+              width={32}
+              height={32}
+              className="inline-block invert dark:invert-0"
+            />
+          </Link>
+          <Link
+            href={SOCIAL_LINKS.x}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white hover:text-gray-300 transition-colors duration-200"
+            aria-label="X Profile"
+          >
+            <Image
+              src="/socials/XLogo.svg"
+              alt="X Icon"
+              width={24}
+              height={24}
+              className="inline-block invert dark:invert-0"
+            />
+          </Link>
+        </div>
       </div>
     </section>
   );
