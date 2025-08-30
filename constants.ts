@@ -184,4 +184,10 @@ export const projects: Project[] = [
     url: "https://play.google.com/store/apps/details?id=tqel.queensenglish.android.app&pli=1",
     description: `The English Quest is a gamified mobile application aimed at helping users improve their English language skills through interactive challenges and storytelling. The app combines engaging quests, vocabulary exercises, and grammar puzzles in a format that feels more like an adventure game than traditional learning. With carefully designed UI/UX, it appeals to both children and adults looking to practice English in a fun and interactive way. The app supports progress tracking, rewards, and adaptive difficulty levels to keep learners motivated. Available on the Google Play Store, The English Quest has been well received for blending education with entertainment in a mobile-first experience.`,
   },
+  {
+    title: "AssetDrain",
+    url: "https://www.npmjs.com/package/assetdrain",
+    description:
+      "A blazing-fast CLI tool that scans your repo for assets (like .svg, .png, .mp4, etc.), checks where they're actually used in code, and tells you what you can delete — or deletes it for you (with your permission of course).",
+  },
 ];
