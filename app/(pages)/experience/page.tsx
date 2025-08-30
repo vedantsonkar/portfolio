@@ -58,66 +58,68 @@ export default function ExperiencePage() {
       className="font-[family-name:var(--font-geist-sans)] px-4 pb-4 sm:px-6 sm:pb-6 lg:px-12 lg:pb-12 space-y-8"
       style={{ background: "var(--background)" }}
     >
-      <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6 text-center">
-        Experience
-      </h1>
+      <div className="mx-auto max-w-7xl [1600px]:max-w-9xl flex flex-col gap-y-8">
+        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6 text-center">
+          Experience
+        </h1>
 
-      <section className="space-y-6">
-        {experiences.map((exp: Experience, idx: number) => (
-          <article
-            key={idx}
-            className="p-3 sm:p-4 lg:p-6 rounded-2xl shadow-md bg-white/5 border border-gray-200"
-          >
-            {/* Company + Role */}
-            <header className="mb-2 flex flex-col sm:flex-row sm:items-center sm:justify-between">
-              <div>
-                <h2 className="text-lg sm:text-xl lg:text-2xl font-semibold">
-                  {exp.role}
-                </h2>
-                <p className="text-base sm:text-lg text-gray-600 dark:text-gray-500">
-                  {exp.company}
-                </p>
-              </div>
-              <span className="text-xs sm:text-sm lg:text-base text-gray-500 dark:text-gray-400 mt-1 sm:mt-0">
-                {exp.location}
-              </span>
-            </header>
+        <section className="space-y-6">
+          {experiences.map((exp: Experience, idx: number) => (
+            <article
+              key={idx}
+              className="p-3 sm:p-4 lg:p-6 rounded-2xl shadow-md bg-white/5 border border-gray-200"
+            >
+              {/* Company + Role */}
+              <header className="mb-2 flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                <div>
+                  <h2 className="text-lg sm:text-xl lg:text-2xl font-semibold">
+                    {exp.role}
+                  </h2>
+                  <p className="text-base sm:text-lg text-gray-600 dark:text-gray-500">
+                    {exp.company}
+                  </p>
+                </div>
+                <span className="text-xs sm:text-sm lg:text-base text-gray-500 dark:text-gray-400 mt-1 sm:mt-0">
+                  {exp.location}
+                </span>
+              </header>
 
-            {/* Date Range (semantic + accessible) */}
-            <p className="text-xs sm:text-sm lg:text-base text-gray-500 dark:text-gray-400">
-              <time dateTime={exp.startDate.toISOString()}>
-                {exp.startDate.toLocaleDateString("en-US", {
-                  month: "short",
-                  year: "numeric",
-                })}
-              </time>
-              {" - "}
-              {exp.endDate ? (
-                <time dateTime={exp.endDate.toISOString()}>
-                  {exp.endDate.toLocaleDateString("en-US", {
+              {/* Date Range (semantic + accessible) */}
+              <p className="text-xs sm:text-sm lg:text-base text-gray-500 dark:text-gray-400">
+                <time dateTime={exp.startDate.toISOString()}>
+                  {exp.startDate.toLocaleDateString("en-US", {
                     month: "short",
                     year: "numeric",
                   })}
                 </time>
-              ) : (
-                <span aria-label="Present">Present</span>
-              )}
-            </p>
+                {" - "}
+                {exp.endDate ? (
+                  <time dateTime={exp.endDate.toISOString()}>
+                    {exp.endDate.toLocaleDateString("en-US", {
+                      month: "short",
+                      year: "numeric",
+                    })}
+                  </time>
+                ) : (
+                  <span aria-label="Present">Present</span>
+                )}
+              </p>
 
-            {/* Bullet Points */}
-            <ul className="list-disc list-inside mt-3 space-y-1 sm:space-y-2">
-              {exp.bulletPoints.map((point, i) => (
-                <li
-                  key={i}
-                  className="text-xs sm:text-base lg:text-lg text-gray-700 dark:text-white"
-                >
-                  {point}
-                </li>
-              ))}
-            </ul>
-          </article>
-        ))}
-      </section>
+              {/* Bullet Points */}
+              <ul className="list-disc list-inside mt-3 space-y-1 sm:space-y-2">
+                {exp.bulletPoints.map((point, i) => (
+                  <li
+                    key={i}
+                    className="text-xs sm:text-base lg:text-lg text-gray-700 dark:text-white"
+                  >
+                    {point}
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </section>
+      </div>
     </main>
   );
 }
