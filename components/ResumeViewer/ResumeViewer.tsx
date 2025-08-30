@@ -20,6 +20,8 @@ export default function ResumeViewer() {
 
         {/* Resume Iframe */}
         <iframe
+          aria-labelledby="resume-page-heading"
+          title="Resume"
           src={RESUME_PREVIEW_URL}
           className="w-full h-full"
           style={{ transform: `scale(${scale})`, transformOrigin: "0 0" }}

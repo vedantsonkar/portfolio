@@ -85,7 +85,10 @@ export const RESUME_DOWNLOAD_URL = `https://docs.google.com/document/d/${RESUME_
 export type Experience = {
   id: number;
   role: string;
-  company: string;
+  company: {
+    name: string;
+    url: string;
+  };
   location: string;
   startDate: Date;
   endDate?: Date | null;
@@ -96,7 +99,10 @@ export const experiences: Experience[] = [
   {
     id: 1,
     role: "Associate Software Engineer",
-    company: "Cornerstone OnDemand",
+    company: {
+      name: "Cornerstone OnDemand",
+      url: "https://www.cornerstoneondemand.com/",
+    },
     location: "Mumbai",
     startDate: new Date(2024, 4), // May 2024
     // ongoing so no endDate
@@ -113,7 +119,10 @@ export const experiences: Experience[] = [
   {
     id: 2,
     role: "Senior Associate Software Engineer",
-    company: "Honestly Italian",
+    company: {
+      name: "Honestly Italian",
+      url: "https://www.foodstories.shop/",
+    },
     location: "Mumbai",
     startDate: new Date(2023, 4), // May 2023
     endDate: new Date(2024, 4), // May 2024
@@ -130,7 +139,10 @@ export const experiences: Experience[] = [
   {
     id: 3,
     role: "Software Engineer",
-    company: "The English Quest",
+    company: {
+      name: "The English Quest",
+      url: "https://www.theenglishquest.com/",
+    },
     location: "Mumbai",
     startDate: new Date(2022, 3), // April 2022
     endDate: new Date(2023, 4), // May 2023

@@ -60,7 +60,7 @@ export default function ProjectsPage() {
       style={{ background: "var(--background)" }}
     >
       <div className="mx-auto max-w-7xl [1600px]:max-w-9xl flex flex-col gap-y-8">
-        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6 text-center">
+        <h1 className="text-2xl sm:text-3xl lg:text-6xl font-bold mb-6 text-center">
           Projects
         </h1>
 

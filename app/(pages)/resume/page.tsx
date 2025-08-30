@@ -56,7 +56,10 @@ export default function ResumePage() {
       className="font-[family-name:var(--font-geist-sans)]"
       style={{ background: "var(--background)" }}
     >
-      <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6 text-center">
+      <h1
+        id="resume-page-heading"
+        className="text-2xl sm:text-3xl lg:text-6xl font-bold mb-6 text-center"
+      >
         Resume
       </h1>
       <ResumeViewer />

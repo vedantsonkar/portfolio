@@ -1,6 +1,7 @@
 // app/experience/page.tsx
 import { experiences, Experience } from "@/constants";
 import { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Experience | Vedant Sonkar - Software Engineer Portfolio",
@@ -59,7 +60,7 @@ export default function ExperiencePage() {
       style={{ background: "var(--background)" }}
     >
       <div className="mx-auto max-w-7xl [1600px]:max-w-9xl flex flex-col gap-y-8">
-        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6 text-center">
+        <h1 className="text-2xl sm:text-3xl lg:text-6xl font-bold mb-6 text-center">
           Experience
         </h1>
 
@@ -75,9 +76,14 @@ export default function ExperiencePage() {
                   <h2 className="text-lg sm:text-xl lg:text-2xl font-semibold">
                     {exp.role}
                   </h2>
-                  <p className="text-base sm:text-lg text-gray-600 dark:text-gray-500">
-                    {exp.company}
-                  </p>
+                  <Link
+                    href={exp.company.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-base sm:text-lg underline text-gray-600 dark:text-gray-500"
+                  >
+                    {exp.company.name}
+                  </Link>
                 </div>
                 <span className="text-xs sm:text-sm lg:text-base text-gray-500 dark:text-gray-400 mt-1 sm:mt-0">
                   {exp.location}
