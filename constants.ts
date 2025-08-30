@@ -76,3 +76,8 @@ export const SOCIAL_LINKS = {
   instagram: "https://www.instagram.com/vedantsonkarr/",
   x: "https://x.com/vedant_sonkar",
 };
+
+export const RESUME_DOC_ID = "1VSqmAFGXkyNyTMVz8I9TDWVPVSPdK0PdgWHLzfZ43jo";
+
+export const RESUME_PREVIEW_URL = `https://docs.google.com/document/d/${RESUME_DOC_ID}/preview`;
+export const RESUME_DOWNLOAD_URL = `https://docs.google.com/document/d/${RESUME_DOC_ID}/export?format=pdf`;
