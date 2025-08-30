@@ -90,7 +90,7 @@ const jsonLd = {
   },
   hasOccupation: {
     "@type": "Occupation",
-    name: "Associate Software Engineer",
+    name: "Software Engineer",
     description: "Developing high-performance web applications.",
   },
 };

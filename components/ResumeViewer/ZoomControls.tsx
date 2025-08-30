@@ -12,7 +12,7 @@ type ZoomControlsProps = {
 const ZoomControls: FC<ZoomControlsProps> = ({ setScale, constraintsRef }) => {
   return (
     <motion.div
-      className="absolute top-3 left-3 z-10 flex gap-2 bg-white/50 dark:bg-gray-800/50 text-gray-800 dark:text-gray-100 backdrop-blur-sm p-2 rounded-lg shadow-md m-6"
+      className="absolute top-3 left-3 z-4 flex gap-2 bg-white/50 dark:bg-gray-800/50 text-gray-800 dark:text-gray-100 backdrop-blur-sm p-2 rounded-lg shadow-md m-6"
       drag
       dragConstraints={constraintsRef}
       dragElastic={0.05} // bounce at edges
