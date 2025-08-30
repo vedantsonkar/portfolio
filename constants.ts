@@ -144,3 +144,32 @@ export const experiences: Experience[] = [
     ],
   },
 ];
+
+export interface Project {
+  title: string;
+  url: string;
+  description: string;
+}
+
+export const projects: Project[] = [
+  {
+    title: "Food Stories",
+    url: "https://www.foodstories.shop",
+    description: `Food Stories is an e-commerce platform designed for food enthusiasts who want to explore, discover, and purchase gourmet and artisanal products. The project focuses on providing a smooth and highly visual user experience where curated products are showcased with rich storytelling. Built with performance in mind, the platform ensures fast browsing and seamless checkout on both desktop and mobile devices. Key features include product categorization, advanced search, and responsive design that adapts beautifully across screen sizes. The goal of Food Stories is not just to enable transactions but to create a narrative-driven marketplace where users can connect emotionally with the food they purchase.`,
+  },
+  {
+    title: "Zoomin Productions",
+    url: "https://www.zoomin.productions",
+    description: `Zoomin Productions is a portfolio and showcase website for a creative production house specializing in film, advertising, and digital content creation. The project emphasizes strong visuals, smooth navigation, and an immersive storytelling experience to highlight the studio’s work. It includes video integrations, high-quality image galleries, and responsive layouts optimized for modern devices. Built with a focus on branding, the site reflects the artistic identity of the production company while ensuring performance and accessibility. Clients can easily explore past projects, services, and collaborations, making it a powerful online presence for attracting new business opportunities in the media space.`,
+  },
+  {
+    title: "LXP Edcast",
+    url: "https://www.cornerstoneondemand.com/platform/learning-experience-lxp/",
+    description: `Edcast (by Cornerstone) is a Learning Experience Platform (LXP) widely used as an internal enterprise tool by multiple Fortune 500 companies. The platform enables organizations to deliver personalized learning experiences, skill development, and content curation to employees at scale. It integrates with various enterprise systems and provides analytics to track learning progress, making it a powerful solution for workforce development. Since this is an internal enterprise product, there is no publicly accessible URL or demo environment available. The project involved building and enhancing features within Edcast’s ecosystem, improving usability and accessibility for end users across industries.`,
+  },
+  {
+    title: "The English Quest - Mobile App",
+    url: "https://play.google.com/store/apps/details?id=tqel.queensenglish.android.app&pli=1",
+    description: `The English Quest is a gamified mobile application aimed at helping users improve their English language skills through interactive challenges and storytelling. The app combines engaging quests, vocabulary exercises, and grammar puzzles in a format that feels more like an adventure game than traditional learning. With carefully designed UI/UX, it appeals to both children and adults looking to practice English in a fun and interactive way. The app supports progress tracking, rewards, and adaptive difficulty levels to keep learners motivated. Available on the Google Play Store, The English Quest has been well received for blending education with entertainment in a mobile-first experience.`,
+  },
+];
