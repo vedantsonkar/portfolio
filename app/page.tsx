@@ -2,7 +2,6 @@ import HeadshotSocialsSection from "@/components/Homepage/HeadshotSocialsSection
 import SummarySection from "@/components/Homepage/SummarySection";
 import ExperiencePage from "./(pages)/experience/page";
 import ProjectsPage from "./(pages)/projects/page";
-import ResumePage from "./(pages)/resume/page";
 import TextPressureComponent from "@/components/Banner/Banner";
 import LiquidEther from "@/components/LiquidEther";
 
@@ -10,7 +9,7 @@ export default function Home() {
   return (
     <main
       role="main"
-      className="font-[family-name:var(--font-geist-sans)]"
+      className="font-[family-name:var(--font-geist-sans)] pb-8"
       style={{ background: "var(--background)", position: "relative" }}
     >
       <div className="px-4 -mt-32 sm:-mt-36 2xl:-mt-48 h-screen relative select-none">
@@ -31,9 +30,6 @@ export default function Home() {
         </div>
         <div>
           <ProjectsPage />
-        </div>
-        <div>
-          <ResumePage />
         </div>
       </div>
     </main>

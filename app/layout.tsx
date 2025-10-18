@@ -109,10 +109,10 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased py-32 sm:py-36 2xl:py-48`}
+        className={`${geistSans.variable} ${geistMono.variable} relative antialiased min-h-screen flex flex-col pt-32 sm:pt-36 2xl:pt-48`}
       >
         <Header />
-        {children}
+        <main className="flex-1">{children}</main>
         <Footer />
         <SpeedInsights />
         <Analytics />

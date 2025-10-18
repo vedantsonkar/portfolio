@@ -209,3 +209,45 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Continuous flowing neon divider */
+.neon-divider {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    #0ff,
+    #ff00ff,
+    #00ff00,
+    #ffff00,
+    #0ff,
+    transparent
+  );
+  background-size: 300% 100%; /* make gradient wider for smooth flow */
+  animation: neonFlow 6s linear infinite,
+    /* moves gradient horizontally */ neonPulse 3s ease-in-out infinite; /* pulsing glow */
+  filter: blur(1px);
+}
+
+/* Moves the gradient left to right continuously */
+@keyframes neonFlow {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 0%;
+  }
+}
+
+/* Pulsing glow effect */
+@keyframes neonPulse {
+  0%,
+  100% {
+    opacity: 0.7;
+    filter: blur(0px);
+  }
+  50% {
+    opacity: 1;
+    filter: blur(2px);
+  }
+}

@@ -1,11 +1,13 @@
 "use client";
 import { motion } from "framer-motion";
+import { twMerge } from "tailwind-merge";
 
 interface DropTextProps {
   text1: string;
   text2?: string;
   duration?: number; // in seconds
   delay?: number; // delay before second line animates
+  textClassname?: string;
 }
 
 const DropText: React.FC<DropTextProps> = ({
@@ -13,6 +15,7 @@ const DropText: React.FC<DropTextProps> = ({
   text2,
   duration = 0.15,
   delay = 0.1,
+  textClassname,
 }) => {
   const lineVariant = (customDelay = 0) => ({
     hidden: { y: -50, opacity: 0 },
@@ -42,7 +45,7 @@ const DropText: React.FC<DropTextProps> = ({
           whileInView="visible"
           viewport={{ once: true, amount: 0.5 }}
           variants={lineVariant(delay)}
-          className={"dark:text-white/30 text-black/40"}
+          className={twMerge("dark:text-white/30 text-black/40", textClassname)}
         >
           {text2}
         </motion.div>
