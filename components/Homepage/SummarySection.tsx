@@ -4,7 +4,7 @@ import NumbersSection from "./NumbersSection";
 
 const SummarySection = () => {
   return (
-    <section className="flex flex-col items-center lg:items-start justify-start gap-y-8 max-w-lg text-center lg:text-left ">
+    <section className="flex flex-col items-center lg:items-start justify-start gap-y-8 max-lg:max-w-lg text-center lg:text-left lg:w-full">
       <DropText text1="SOFTWARE" text2="ENGINEER" duration={0.5} delay={0.3} />
       <div className="sm:pl-2">
         <TextType
