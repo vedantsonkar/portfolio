@@ -57,8 +57,12 @@ export default function ResumePage() {
       className="font-[family-name:var(--font-geist-sans)]"
       style={{ background: "var(--background)" }}
     >
-      <DropText text1="MY" text2="RESUME" duration={0.5} delay={0.3} />
-      <ResumeViewer />
+      <div className="mx-auto max-w-7xl [1600px]:max-w-9xl flex flex-col gap-y-8">
+        <div className="px-4">
+          <DropText text1="MY" text2="RESUME" duration={0.5} delay={0.3} />
+        </div>
+        <ResumeViewer />
+      </div>
     </main>
   );
 }
