@@ -5,7 +5,7 @@ import { SOCIAL_LINKS } from "@/constants";
 const HeadshotSocialsSection = () => {
   return (
     <section
-      className="dark:bg-white/90 bg-black/80 w-[340px] h-[520px] sm:h-[590px] rounded-2xl max-lg:pt-10  max-lg:pb-6 lg:py-10 px-8 flex flex-col items-center justify-between relative overflow-hidden"
+      className="dark:bg-white/90 bg-black/80 w-[340px] h-[520px] sm:h-[590px] rounded-2xl max-lg:pt-10  max-lg:pb-6 lg:py-10 px-8 flex flex-col items-center justify-between relative overflow-hidden shrink-0"
       aria-labelledby="headshot-section-title"
       aria-describedby="headshot-section-desc"
     >

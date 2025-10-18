@@ -1,3 +1,4 @@
+import DropText from "@/components/DropText/DropText";
 import ResumeViewer from "@/components/ResumeViewer/ResumeViewer";
 import { Metadata } from "next";
 
@@ -56,12 +57,7 @@ export default function ResumePage() {
       className="font-[family-name:var(--font-geist-sans)]"
       style={{ background: "var(--background)" }}
     >
-      <h1
-        id="resume-page-heading"
-        className="text-2xl sm:text-3xl lg:text-6xl font-bold mb-6 text-center"
-      >
-        Resume
-      </h1>
+      <DropText text1="MY" text2="RESUME" duration={0.5} delay={0.3} />
       <ResumeViewer />
     </main>
   );

@@ -1,6 +1,7 @@
 import { projects } from "@/constants";
 import ProjectCard from "@/components/ProjectCard/ProjectCard";
 import { Metadata } from "next";
+import DropText from "@/components/DropText/DropText";
 
 // app/projects/page.tsx
 export const metadata: Metadata = {
@@ -60,10 +61,7 @@ export default function ProjectsPage() {
       style={{ background: "var(--background)" }}
     >
       <div className="mx-auto max-w-7xl [1600px]:max-w-9xl flex flex-col gap-y-8">
-        <h1 className="text-2xl sm:text-3xl lg:text-6xl font-bold mb-6 text-center">
-          Projects
-        </h1>
-
+        <DropText text1="MY" text2="PROJECTS" duration={0.5} delay={0.3} />
         <div className="flex flex-col gap-y-8 sm:gap-y-12 lg:gap-y-16">
           {projects.map((p, i) => (
             <ProjectCard key={i} {...p} />

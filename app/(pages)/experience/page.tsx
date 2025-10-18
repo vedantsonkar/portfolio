@@ -1,4 +1,4 @@
-// app/experience/page.tsx
+import DropText from "@/components/DropText/DropText";
 import { experiences, Experience } from "@/constants";
 import { Metadata } from "next";
 import Link from "next/link";
@@ -60,15 +60,12 @@ export default function ExperiencePage() {
       style={{ background: "var(--background)" }}
     >
       <div className="mx-auto max-w-7xl [1600px]:max-w-9xl flex flex-col gap-y-8">
-        <h1 className="text-2xl sm:text-3xl lg:text-6xl font-bold mb-6 text-center">
-          Experience
-        </h1>
-
+        <DropText text1="MY" text2="WORK" duration={0.5} delay={0.3} />
         <section className="space-y-6">
           {experiences.map((exp: Experience, idx: number) => (
             <article
+              className="p-3 sm:p-4 lg:p-6 rounded-2xl shadow-md bg-white/5"
               key={idx}
-              className="p-3 sm:p-4 lg:p-6 rounded-2xl shadow-md bg-white/5 border border-gray-200"
             >
               {/* Company + Role */}
               <header className="mb-2 flex flex-col sm:flex-row sm:items-center sm:justify-between">
