@@ -1,5 +1,5 @@
 "use client";
-import { FC, FormEvent, useState } from "react";
+import { FC, FormEvent, useMemo, useState } from "react";
 import DropText from "../DropText/DropText";
 
 const ContactForm: FC = () => {
@@ -10,6 +10,11 @@ const ContactForm: FC = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+
+  const isButtonDisabled = useMemo(
+    () => name === "" || email === "" || message === "" || loading,
+    [email, loading, message, name]
+  );
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -103,8 +108,8 @@ const ContactForm: FC = () => {
 
         <button
           type="submit"
-          disabled={loading}
-          className="w-full rounded-full bg-white text-black dark:bg-black dark:text-white py-3 font-semibold transition-all hover:opacity-80 disabled:opacity-50"
+          disabled={isButtonDisabled}
+          className="w-full rounded-full bg-white text-black dark:bg-black dark:text-white py-3 font-semibold transition-all hover:opacity-80 disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer"
         >
           {loading ? "Sending..." : "Send Message"}
         </button>

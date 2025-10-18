@@ -7,6 +7,7 @@ import { Project } from "@/constants";
 
 export default function ProjectCard({ title, url, description }: Project) {
   const [isOpen, setIsOpen] = useState(true);
+  const [isIframeActive, setIsIframeActive] = useState(false);
 
   return (
     <div className="group block w-full rounded-2xl border shadow-lg overflow-hidden hover:shadow-xl transition dark:shadow-white">
@@ -58,8 +59,26 @@ export default function ProjectCard({ title, url, description }: Project) {
               transition={{ duration: 0.5, ease: "easeInOut" }}
               className="relative bg-gray-200 overflow-hidden w-full"
             >
-              <div className="aspect-[9/16] md:aspect-video w-full">
-                <iframe src={url} className="w-full h-full" loading="lazy" />
+              <div className="aspect-[9/16] md:aspect-video w-full relative">
+                {/* Iframe */}
+                <iframe
+                  src={url}
+                  className="w-full h-full"
+                  loading="lazy"
+                  style={{ pointerEvents: isIframeActive ? "auto" : "none" }}
+                />
+
+                {/* Frosted overlay */}
+                {!isIframeActive && (
+                  <div
+                    className="absolute inset-0 flex items-center justify-center bg-black/30 dark:bg-gray-900/50 backdrop-blur-sm cursor-pointer transition"
+                    onClick={() => setIsIframeActive(true)}
+                  >
+                    <span className="text-white dark:text-gray-200 font-medium text-lg text-center px-4">
+                      Tap / Click to interact with the project!
+                    </span>
+                  </div>
+                )}
               </div>
             </motion.div>
           )}
@@ -68,13 +87,17 @@ export default function ProjectCard({ title, url, description }: Project) {
 
       {/* Title + URL section */}
       <div className="p-4 bg-white dark:bg-gray-800 space-y-4">
-        <h3 className="text-lg font-semibold">{title}</h3>
-        <p className="dark:bg-gray-800 text-base line-clamp-5">{description}</p>
+        <h3 className="text-lg font-semibold text-black dark:text-white">
+          {title}
+        </h3>
+        <p className="text-base line-clamp-5 text-gray-700 dark:text-gray-300">
+          {description}
+        </p>
         <Link
           href={url}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-sm text-blue-600 truncate flex items-center gap-x-1"
+          className="text-sm text-blue-600 dark:text-blue-400 truncate flex items-center gap-x-1"
         >
           <span>Open Project</span> <ArrowRight size={20} />
         </Link>
