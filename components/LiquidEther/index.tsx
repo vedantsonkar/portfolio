@@ -57,8 +57,8 @@ interface LiquidEtherWebGL {
 const defaultColors = ["#5227FF", "#FF9FFC", "#B19EEF"];
 
 export default function LiquidEther({
-  mouseForce = 25,
-  cursorSize = 215,
+  mouseForce = 20,
+  cursorSize = 100,
   isViscous = false,
   viscous = 30,
   iterationsViscous = 32,
@@ -74,7 +74,7 @@ export default function LiquidEther({
   autoSpeed = 0.5,
   autoIntensity = 2.2,
   takeoverDuration = 0.25,
-  autoResumeDelay = 1000,
+  autoResumeDelay = 1500,
   autoRampDuration = 0.6,
 }: LiquidEtherProps): React.ReactElement {
   const mountRef = useRef<HTMLDivElement | null>(null);
@@ -1287,9 +1287,7 @@ export default function LiquidEther({
   return (
     <div
       ref={mountRef}
-      className={`w-full h-full relative overflow-hidden pointer-events-none touch-none ${
-        className || ""
-      }`}
+      className={`w-full h-full relative overflow-hidden ${className || ""}`}
       style={style}
     />
   );

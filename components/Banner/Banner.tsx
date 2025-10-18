@@ -1,30 +1,21 @@
 import { FC } from "react";
-import TextPressure from "../TextPressure";
+import LiquidEther from "../LiquidEther";
+import TextPressureComponent from "../TextPressure/TextPressureComponent";
 
-interface TextPressureComponentProps {
-  text: string;
-}
-
-const TextPressureComponent: FC<TextPressureComponentProps> = ({ text }) => {
+const Banner: FC = () => {
   return (
-    <div className="flex w-full flex-col items-center justify-center h-screen">
-      <div className="w-full text-center relative">
-        <TextPressure
-          text={text}
-          flex={true}
-          alpha={false}
-          stroke={false}
-          width={true}
-          weight={true}
-          italic={true}
-          strokeColor="#ff0000"
-          minFontSizeDesktop={150}
-          minFontSizeMobile={24}
-          minFontSizeTablet={52}
-        />
+    <div className="px-4 -mt-32 sm:-mt-36 2xl:-mt-48 h-screen relative">
+      <div className="absolute top-0 left-0 w-full h-full">
+        <LiquidEther />
       </div>
+      <div className="flex flex-col items-center justify-center h-full w-full gap-y-6 md:gap-y-8 select-none">
+        <TextPressureComponent text="Building smooth experiences," />
+        <TextPressureComponent text="one pixel at a time." />
+      </div>
+
+      <div className="absolute bottom-0 left-0 w-full h-36 pointer-events-none bg-gradient-to-t from-[#fff] dark:from-[#0a0a0a] to-transparent"></div>
     </div>
   );
 };
 
-export default TextPressureComponent;
+export default Banner;
