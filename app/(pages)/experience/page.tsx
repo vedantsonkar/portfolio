@@ -1,4 +1,5 @@
 import DropText from "@/components/DropText/DropText";
+import StarBorder from "@/components/StarBorder/StarBorder";
 import { experiences, Experience } from "@/constants";
 import { Metadata } from "next";
 import Link from "next/link";
@@ -63,13 +64,17 @@ export default function ExperiencePage() {
         <DropText text1="MY" text2="WORK" duration={0.5} delay={0.3} />
         <section className="space-y-6">
           {experiences.map((exp: Experience, idx: number) => (
-            <article
+            <StarBorder
+              as="article"
               className="p-3 sm:p-4 lg:p-6 rounded-2xl shadow-md bg-white/5"
               key={idx}
+              color="#ff00ff"
+              thickness={2}
+              speed="2.5s"
             >
               {/* Company + Role */}
               <header className="mb-2 flex flex-col sm:flex-row sm:items-center sm:justify-between">
-                <div>
+                <div className="flex flex-col items-start justify-start text-left">
                   <h2 className="text-lg sm:text-xl lg:text-2xl font-semibold">
                     {exp.role}
                   </h2>
@@ -82,34 +87,35 @@ export default function ExperiencePage() {
                     {exp.company.name}
                   </Link>
                 </div>
-                <span className="text-xs sm:text-sm lg:text-base text-gray-500 dark:text-gray-400 mt-1 sm:mt-0">
-                  {exp.location}
-                </span>
+                {/* Date Range + Location*/}
+                <div className="flex flex-col items-start justify-start sm:items-end sm:justify-end text-left sm:text-right">
+                  <p className="text-xs sm:text-sm lg:text-base text-gray-500 dark:text-gray-400">
+                    <time dateTime={exp.startDate.toISOString()}>
+                      {exp.startDate.toLocaleDateString("en-US", {
+                        month: "short",
+                        year: "numeric",
+                      })}
+                    </time>
+                    {" - "}
+                    {exp.endDate ? (
+                      <time dateTime={exp.endDate.toISOString()}>
+                        {exp.endDate.toLocaleDateString("en-US", {
+                          month: "short",
+                          year: "numeric",
+                        })}
+                      </time>
+                    ) : (
+                      <span aria-label="Present">Present</span>
+                    )}
+                  </p>
+                  <span className="text-xs sm:text-sm lg:text-base text-gray-500 dark:text-gray-400 mt-1 sm:mt-0">
+                    {exp.location}
+                  </span>
+                </div>
               </header>
 
-              {/* Date Range (semantic + accessible) */}
-              <p className="text-xs sm:text-sm lg:text-base text-gray-500 dark:text-gray-400">
-                <time dateTime={exp.startDate.toISOString()}>
-                  {exp.startDate.toLocaleDateString("en-US", {
-                    month: "short",
-                    year: "numeric",
-                  })}
-                </time>
-                {" - "}
-                {exp.endDate ? (
-                  <time dateTime={exp.endDate.toISOString()}>
-                    {exp.endDate.toLocaleDateString("en-US", {
-                      month: "short",
-                      year: "numeric",
-                    })}
-                  </time>
-                ) : (
-                  <span aria-label="Present">Present</span>
-                )}
-              </p>
-
               {/* Bullet Points */}
-              <ul className="list-disc list-inside mt-3 space-y-1 sm:space-y-2">
+              <ul className="list-disc list-inside mt-3 space-y-1 sm:space-y-2 text-left">
                 {exp.bulletPoints.map((point, i) => (
                   <li
                     key={i}
@@ -119,7 +125,7 @@ export default function ExperiencePage() {
                   </li>
                 ))}
               </ul>
-            </article>
+            </StarBorder>
           ))}
         </section>
       </div>

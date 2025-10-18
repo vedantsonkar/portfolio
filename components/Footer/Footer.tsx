@@ -6,7 +6,8 @@ import { SOCIAL_LINKS } from "@/constants";
 
 const Footer: FC = () => {
   return (
-    <footer className="bg-black dark:bg-white text-white dark:text-black">
+    <footer className="bg-black dark:bg-white text-white dark:text-black sticky bottom-0 w-full">
+      {/* <div className="absolute top-0 left-0 w-full h-12 pointer-events-none bg-gradient-to-b from-[#fff] dark:from-[#0a0a0a] to-transparent"></div> */}
       {/* Contact form */}
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <ContactForm />
