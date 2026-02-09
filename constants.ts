@@ -263,3 +263,125 @@ export const achievements: Achievement[] = [
     icon: "Database",
   },
 ];
+
+export interface TechStack {
+  name: string;
+  icon: string; // Simple Icons slug or custom
+  url: string; // Official website
+  color: string; // Brand color
+  category: "frontend" | "backend" | "language" | "mobile" | "devops" | "testing";
+}
+
+export const techStack: TechStack[] = [
+  // Frontend
+  {
+    name: "React",
+    icon: "react",
+    url: "https://react.dev",
+    color: "#61DAFB",
+    category: "frontend",
+  },
+  {
+    name: "Next.js",
+    icon: "nextdotjs",
+    url: "https://nextjs.org",
+    color: "#000000",
+    category: "frontend",
+  },
+  {
+    name: "Tailwind CSS",
+    icon: "tailwindcss",
+    url: "https://tailwindcss.com",
+    color: "#06B6D4",
+    category: "frontend",
+  },
+  {
+    name: "Framer Motion",
+    icon: "framer",
+    url: "https://motion.dev",
+    color: "#FF0055",
+    category: "frontend",
+  },
+  // Languages
+  {
+    name: "TypeScript",
+    icon: "typescript",
+    url: "https://typescriptlang.org",
+    color: "#3178C6",
+    category: "language",
+  },
+  {
+    name: "JavaScript",
+    icon: "javascript",
+    url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+    color: "#F7DF1E",
+    category: "language",
+  },
+  {
+    name: "Python",
+    icon: "python",
+    url: "https://python.org",
+    color: "#3776AB",
+    category: "language",
+  },
+  // Backend
+  {
+    name: "Node.js",
+    icon: "nodedotjs",
+    url: "https://nodejs.org",
+    color: "#339933",
+    category: "backend",
+  },
+  {
+    name: "Express",
+    icon: "express",
+    url: "https://expressjs.com",
+    color: "#000000",
+    category: "backend",
+  },
+  {
+    name: "MongoDB",
+    icon: "mongodb",
+    url: "https://mongodb.com",
+    color: "#47A248",
+    category: "backend",
+  },
+  // Mobile
+  {
+    name: "React Native",
+    icon: "react",
+    url: "https://reactnative.dev",
+    color: "#61DAFB",
+    category: "mobile",
+  },
+  // DevOps & Cloud
+  {
+    name: "AWS",
+    icon: "/icons/aws.svg",
+    url: "https://aws.amazon.com",
+    color: "#FF9900",
+    category: "devops",
+  },
+  {
+    name: "GCP",
+    icon: "googlecloud",
+    url: "https://cloud.google.com",
+    color: "#4285F4",
+    category: "devops",
+  },
+  {
+    name: "Git",
+    icon: "git",
+    url: "https://git-scm.com",
+    color: "#F05032",
+    category: "devops",
+  },
+  // Testing
+  {
+    name: "Jest",
+    icon: "jest",
+    url: "https://jestjs.io",
+    color: "#C21325",
+    category: "testing",
+  },
+];

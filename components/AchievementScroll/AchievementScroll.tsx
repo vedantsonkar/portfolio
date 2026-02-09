@@ -40,7 +40,7 @@ const AchievementScroll: React.FC<AchievementScrollProps> = ({
   className,
 }) => {
   return (
-    <div className="py-16 md:py-24 lg:py-32 overflow-hidden space-y-16 md:space-y-24">
+    <div className="py-16 md:py-24 lg:py-32 overflow-hidden space-y-16 md:space-y-24 max-w-5xl mx-auto">
       <DropText
         text1="MY"
         text2="ACHIEVEMENTS"
@@ -52,7 +52,7 @@ const AchievementScroll: React.FC<AchievementScrollProps> = ({
         className={twMerge("relative w-full  ", className)}
         style={{ perspective: "1200px" }}
       >
-        <div className="max-w-5xl mx-auto space-y-12 md:space-y-16 lg:space-y-20">
+        <div className="space-y-12 md:space-y-16 lg:space-y-20">
           {achievements.map((achievement, index) => (
             <AchievementCard
               key={index}

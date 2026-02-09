@@ -19,14 +19,20 @@ const StarBorder = <T extends React.ElementType = "button">({
   children,
   ...rest
 }: StarBorderProps<T>) => {
-  const Component = as ?? "button";
+  // Cast to 'any' to bypass polymorphic component type inference issues
+  // Type safety is preserved at the call site via StarBorderProps<T>
+  const Component = (as ?? "button") as unknown as React.FC<{
+    className?: string;
+    style?: React.CSSProperties;
+    children?: React.ReactNode;
+  }>;
 
   const inlineStyle = (rest as { style?: React.CSSProperties }).style ?? {};
 
   return (
     <Component
       className={`relative inline-block overflow-hidden rounded-[20px] ${className}`}
-      {...rest}
+      {...(rest as object)}
       style={{
         padding: `${thickness}px 0`,
         ...inlineStyle,
