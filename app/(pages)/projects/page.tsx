@@ -1,5 +1,5 @@
 import { projects } from "@/constants";
-import ProjectCard from "@/components/ProjectCard/ProjectCard";
+import ProjectShowcase from "@/components/ProjectShowcase/ProjectShowcase";
 import { Metadata } from "next";
 import DropText from "@/components/DropText/DropText";
 
@@ -62,11 +62,7 @@ export default function ProjectsPage() {
     >
       <div className="mx-auto max-w-7xl [1600px]:max-w-9xl flex flex-col gap-y-8">
         <DropText text1="MY" text2="PROJECTS" duration={0.5} delay={0.3} />
-        <div className="flex flex-col gap-y-8 sm:gap-y-12 lg:gap-y-16">
-          {projects.map((p, i) => (
-            <ProjectCard key={i} {...p} />
-          ))}
-        </div>
+        <ProjectShowcase projects={projects} />
       </div>
     </main>
   );

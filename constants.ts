@@ -161,6 +161,8 @@ export interface Project {
   title: string;
   url: string;
   description: string;
+  bg?: string; // Desktop screenshot path
+  bgMobile?: string; // Mobile screenshot path
 }
 
 export const projects: Project[] = [
@@ -172,22 +174,92 @@ export const projects: Project[] = [
   {
     title: "Zoomin Productions",
     url: "https://www.zoomin.productions",
-    description: `Zoomin Productions is a portfolio and showcase website for a creative production house specializing in film, advertising, and digital content creation. The project emphasizes strong visuals, smooth navigation, and an immersive storytelling experience to highlight the studio’s work. It includes video integrations, high-quality image galleries, and responsive layouts optimized for modern devices. Built with a focus on branding, the site reflects the artistic identity of the production company while ensuring performance and accessibility. Clients can easily explore past projects, services, and collaborations, making it a powerful online presence for attracting new business opportunities in the media space.`,
+    description: `Zoomin Productions is a portfolio and showcase website for a creative production house specializing in film, advertising, and digital content creation. The project emphasizes strong visuals, smooth navigation, and an immersive storytelling experience to highlight the studio's work. It includes video integrations, high-quality image galleries, and responsive layouts optimized for modern devices. Built with a focus on branding, the site reflects the artistic identity of the production company while ensuring performance and accessibility. Clients can easily explore past projects, services, and collaborations, making it a powerful online presence for attracting new business opportunities in the media space.`,
   },
   {
     title: "LXP Edcast",
     url: "https://www.cornerstoneondemand.com/platform/learning-experience-lxp/",
-    description: `Edcast (by Cornerstone) is a Learning Experience Platform (LXP) widely used as an internal enterprise tool by multiple Fortune 500 companies. The platform enables organizations to deliver personalized learning experiences, skill development, and content curation to employees at scale. It integrates with various enterprise systems and provides analytics to track learning progress, making it a powerful solution for workforce development. Since this is an internal enterprise product, there is no publicly accessible URL or demo environment available. The project involved building and enhancing features within Edcast’s ecosystem, improving usability and accessibility for end users across industries.`,
+    description: `Edcast (by Cornerstone) is a Learning Experience Platform (LXP) widely used as an internal enterprise tool by multiple Fortune 500 companies. The platform enables organizations to deliver personalized learning experiences, skill development, and content curation to employees at scale. It integrates with various enterprise systems and provides analytics to track learning progress, making it a powerful solution for workforce development. Since this is an internal enterprise product, there is no publicly accessible URL or demo environment available. The project involved building and enhancing features within Edcast's ecosystem, improving usability and accessibility for end users across industries.`,
+    bg: "/projects/LXP_Desktop.jpg",
+    bgMobile: "/projects/LXP_Mobile.jpg",
   },
   {
     title: "The English Quest - Mobile App",
     url: "https://play.google.com/store/apps/details?id=tqel.queensenglish.android.app&pli=1",
     description: `The English Quest is a gamified mobile application aimed at helping users improve their English language skills through interactive challenges and storytelling. The app combines engaging quests, vocabulary exercises, and grammar puzzles in a format that feels more like an adventure game than traditional learning. With carefully designed UI/UX, it appeals to both children and adults looking to practice English in a fun and interactive way. The app supports progress tracking, rewards, and adaptive difficulty levels to keep learners motivated. Available on the Google Play Store, The English Quest has been well received for blending education with entertainment in a mobile-first experience.`,
+    bg: "/projects/EnglishQuest_Desktop.jpg",
+    bgMobile: "/projects/EnglishQuest_Mobile.jpg",
   },
   {
     title: "AssetDrain",
     url: "https://www.npmjs.com/package/assetdrain",
     description:
       "A blazing-fast CLI tool that scans your repo for assets (like .svg, .png, .mp4, etc.), checks where they're actually used in code, and tells you what you can delete — or deletes it for you (with your permission of course).",
+    bg: "/projects/Assetdrain_Desktop.jpg",
+    bgMobile: "/projects/Assetdrain_Mobile.jpg",
+  },
+];
+
+export interface Achievement {
+  text: string;
+  highlight: string;
+  direction: "left" | "right";
+  icon: string; // Lucide icon name
+}
+
+export const achievements: Achievement[] = [
+  {
+    text: "Optimized pages using Next.js SSR, ISR, and SSG, improving performance by 30–60% as measured by PageSpeed Insights",
+    highlight: "30–60%",
+    direction: "left",
+    icon: "Gauge",
+  },
+  {
+    text: "Resolved 500+ accessibility issues by applying WCAG and ARIA standards. Because the web is for everyone, right?",
+    highlight: "500+",
+    direction: "right",
+    icon: "Accessibility",
+  },
+  {
+    text: "Achieved a PageSpeed score of 98 by reducing FCP and TTFB to under 1s for most pages",
+    highlight: "98",
+    direction: "left",
+    icon: "Zap",
+  },
+  {
+    text: "Designed a micro-frontend architecture with Nx powering applications used by 100k+ users globally",
+    highlight: "100k+",
+    direction: "right",
+    icon: "Users",
+  },
+  {
+    text: "Wrote unit tests with Jest achieving over 95% code coverage, making regressions hard to sneak into production",
+    highlight: "95%",
+    direction: "left",
+    icon: "TestTube",
+  },
+  {
+    text: "Increased customer engagement by 70% by shipping an AI-powered feature users actually loved",
+    highlight: "70%",
+    direction: "right",
+    icon: "Bot",
+  },
+  {
+    text: "Boosted product cross-sales by 50% through smarter UX and personalization",
+    highlight: "50%",
+    direction: "left",
+    icon: "TrendingUp",
+  },
+  {
+    text: "Improved app UX and performance, raising the Play Store rating from 3.9 to 4.8+ stars",
+    highlight: "4.8+",
+    direction: "right",
+    icon: "Star",
+  },
+  {
+    text: "Reduced backend API response times by 30–40% through service and query optimizations",
+    highlight: "30–40%",
+    direction: "left",
+    icon: "Database",
   },
 ];
