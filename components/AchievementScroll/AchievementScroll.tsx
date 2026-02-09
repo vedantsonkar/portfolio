@@ -58,6 +58,7 @@ const AchievementScroll: React.FC<AchievementScrollProps> = ({
               key={index}
               achievement={achievement}
               index={index}
+              isLast={index === achievements.length - 1}
             />
           ))}
         </div>
@@ -69,11 +70,13 @@ const AchievementScroll: React.FC<AchievementScrollProps> = ({
 interface AchievementCardProps {
   achievement: Achievement;
   index: number;
+  isLast: boolean;
 }
 
 const AchievementCard: React.FC<AchievementCardProps> = ({
   achievement,
   index,
+  isLast,
 }) => {
   const isLeft = achievement.direction === "left";
   const IconComponent = iconMap[achievement.icon] || Zap;
@@ -114,7 +117,7 @@ const AchievementCard: React.FC<AchievementCardProps> = ({
     return (
       <>
         {parts[0]}
-        <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 font-bold">
+        <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-500 via-purple-500 to-pink-500 font-bold">
           {achievement.highlight}
         </span>
         {parts[1]}
@@ -126,7 +129,7 @@ const AchievementCard: React.FC<AchievementCardProps> = ({
     <motion.div
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.3 }}
+      viewport={{ once: true, amount: isLast ? 0.2 : 0.3 }}
       variants={curveVariants}
       className={twMerge("flex", isLeft ? "justify-start" : "justify-end")}
       style={{
@@ -153,7 +156,7 @@ const AchievementCard: React.FC<AchievementCardProps> = ({
             "absolute -top-5 w-12 h-12 md:w-14 md:h-14",
             "flex items-center justify-center",
             "rounded-xl",
-            "bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500",
+            "bg-linear-to-br from-blue-500 via-purple-500 to-pink-500",
             isLeft ? "left-6 md:left-8" : "right-6 md:right-8",
           )}
         >
@@ -175,7 +178,7 @@ const AchievementCard: React.FC<AchievementCardProps> = ({
         <div
           className={twMerge(
             "absolute bottom-0 h-1 w-24 md:w-32",
-            "bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500",
+            "bg-linear-to-r from-blue-500 via-purple-500 to-pink-500",
             "rounded-full",
             isLeft ? "left-6 md:left-8" : "right-6 md:right-8",
           )}
