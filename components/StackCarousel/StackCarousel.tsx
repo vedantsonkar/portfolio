@@ -161,7 +161,15 @@ export default function StackCarousel({
     <div className={`w-full space-y-4 md:space-y-6 ${className || ""}`}>
       {/* Row 1 - scrolls left */}
       <ScrollingRow techStack={row1} direction="left" duration={30} />
-
+      {/* Divider line with fade effect */}
+      <div className="relative w-full">
+        {/* Left fade mask */}
+        <div className="absolute left-0 top-0 bottom-0 w-12 sm:w-20 md:w-28 bg-gradient-to-r from-white dark:from-gray-950 to-transparent z-10 pointer-events-none" />
+        {/* Right fade mask */}
+        <div className="absolute right-0 top-0 bottom-0 w-12 sm:w-20 md:w-28 bg-gradient-to-l from-white dark:from-gray-950 to-transparent z-10 pointer-events-none" />
+        {/* Divider line */}
+        <div className="w-full h-[1px] neon-divider" />
+      </div>
       {/* Row 2 - scrolls right */}
       <ScrollingRow techStack={row2} direction="right" duration={35} />
 

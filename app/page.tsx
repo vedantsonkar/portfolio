@@ -4,7 +4,9 @@ import ExperiencePage from "./(pages)/experience/page";
 import ProjectsPage from "./(pages)/projects/page";
 import Banner from "@/components/Banner/Banner";
 import AchievementScroll from "@/components/AchievementScroll/AchievementScroll";
-import { achievements } from "@/constants";
+import { achievements, techStack } from "@/constants";
+import DropText from "@/components/DropText/DropText";
+import StackCarousel from "@/components/StackCarousel/StackCarousel";
 
 export default function Home() {
   return (
@@ -21,6 +23,20 @@ export default function Home() {
         </div>
         <div className="px-2">
           <AchievementScroll achievements={achievements} />
+        </div>
+        <div>
+          <div className="mx-auto max-w-7xl [1600px]:max-w-9xl px-4 sm:px-6 lg:px-8">
+            <div className="mb-12 md:mb-16">
+              <DropText
+                text1="MY"
+                text2="TECH STACK"
+                duration={0.5}
+                delay={0.3}
+                textClassname="max-sm:text-[45px]"
+              />
+            </div>
+            <StackCarousel techStack={techStack} />
+          </div>
         </div>
         <div>
           <ProjectsPage />
