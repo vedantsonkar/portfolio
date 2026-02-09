@@ -40,7 +40,7 @@ const AchievementScroll: React.FC<AchievementScrollProps> = ({
   className,
 }) => {
   return (
-    <div className="py-16 md:py-24 lg:py-32 overflow-hidden space-y-16 md:space-y-24 max-w-5xl mx-auto">
+    <div className="py-16 md:py-24 lg:py-32 overflow-hidden space-y-16 md:space-y-24 max-w-5xl mx-auto px-2 md:px-6">
       <DropText
         text1="MY"
         text2="ACHIEVEMENTS"
@@ -143,7 +143,7 @@ const AchievementCard: React.FC<AchievementCardProps> = ({
           "rounded-2xl",
           "p-6 md:p-8",
           "transition-all duration-300",
-          "hover:shadow-2xl hover:scale-[1.02] hover:border-purple-300 dark:hover:border-purple-600",
+          "hover:shadow-lg hover:scale-[1.01] hover:border-purple-300 dark:hover:border-purple-600",
           "cursor-default",
         )}
       >
@@ -152,7 +152,7 @@ const AchievementCard: React.FC<AchievementCardProps> = ({
           className={twMerge(
             "absolute -top-5 w-12 h-12 md:w-14 md:h-14",
             "flex items-center justify-center",
-            "rounded-xl shadow-lg",
+            "rounded-xl",
             "bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500",
             isLeft ? "left-6 md:left-8" : "right-6 md:right-8",
           )}
@@ -178,15 +178,6 @@ const AchievementCard: React.FC<AchievementCardProps> = ({
             "bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500",
             "rounded-full",
             isLeft ? "left-6 md:left-8" : "right-6 md:right-8",
-          )}
-        />
-
-        {/* Subtle corner glow */}
-        <div
-          className={twMerge(
-            "absolute -z-10 w-40 h-40 rounded-full blur-3xl opacity-10",
-            "bg-gradient-to-r from-blue-500 to-purple-500",
-            isLeft ? "-top-10 -left-10" : "-top-10 -right-10",
           )}
         />
       </div>

@@ -21,7 +21,7 @@ export default function Home() {
           <HeadshotSocialsSection />
           <SummarySection />
         </div>
-        <div className="px-2">
+        <div>
           <AchievementScroll achievements={achievements} />
         </div>
         <div>
