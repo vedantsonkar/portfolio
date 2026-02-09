@@ -57,15 +57,15 @@ interface LiquidEtherWebGL {
 const defaultColors = ["#5227FF", "#FF9FFC", "#B19EEF"];
 
 export default function LiquidEther({
-  mouseForce = 20,
+  mouseForce = 10,
   cursorSize = 100,
   isViscous = false,
-  viscous = 30,
-  iterationsViscous = 32,
-  iterationsPoisson = 32,
+  viscous = 10,
+  iterationsViscous = 16,
+  iterationsPoisson = 16,
   dt = 0.014,
   BFECC = true,
-  resolution = 0.5,
+  resolution = 0.25,
   isBounce = false,
   colors = defaultColors,
   style = {},
@@ -74,7 +74,7 @@ export default function LiquidEther({
   autoSpeed = 0.5,
   autoIntensity = 2.2,
   takeoverDuration = 0.25,
-  autoResumeDelay = 1500,
+  autoResumeDelay = 1000,
   autoRampDuration = 0.6,
 }: LiquidEtherProps): React.ReactElement {
   const mountRef = useRef<HTMLDivElement | null>(null);
@@ -320,7 +320,7 @@ export default function LiquidEther({
           speed: number;
           resumeDelay: number;
           rampDuration: number;
-        }
+        },
       ) {
         this.mouse = mouse;
         this.manager = manager;
@@ -334,7 +334,7 @@ export default function LiquidEther({
         const r = Math.random;
         this.target.set(
           (r() * 2 - 1) * (1 - this.margin),
-          (r() * 2 - 1) * (1 - this.margin)
+          (r() * 2 - 1) * (1 - this.margin),
         );
       }
       forceStop() {
@@ -375,7 +375,7 @@ export default function LiquidEther({
         if (this.rampDurationMs > 0) {
           const t = Math.min(
             1,
-            (now - this.activationTime) / this.rampDurationMs
+            (now - this.activationTime) / this.rampDurationMs,
           );
           ramp = t * t * (3 - 2 * t);
         }
@@ -622,7 +622,7 @@ export default function LiquidEther({
         ]);
         boundaryG.setAttribute(
           "position",
-          new THREE.BufferAttribute(vertices_boundary, 3)
+          new THREE.BufferAttribute(vertices_boundary, 3),
         );
         const boundaryM = new THREE.RawShaderMaterial({
           vertexShader: line_vert,
@@ -667,7 +667,7 @@ export default function LiquidEther({
             scale: {
               value: new THREE.Vector2(
                 simProps.cursor_size,
-                simProps.cursor_size
+                simProps.cursor_size,
               ),
             },
           },
@@ -685,11 +685,11 @@ export default function LiquidEther({
         const cursorSizeY = cursorSize * cellScale.y;
         const centerX = Math.min(
           Math.max(Mouse.coords.x, -1 + cursorSizeX + cellScale.x * 2),
-          1 - cursorSizeX - cellScale.x * 2
+          1 - cursorSizeX - cellScale.x * 2,
         );
         const centerY = Math.min(
           Math.max(Mouse.coords.y, -1 + cursorSizeY + cellScale.y * 2),
-          1 - cursorSizeY - cellScale.y * 2
+          1 - cursorSizeY - cellScale.y * 2,
         );
         const uniforms = (this.mouse.material as THREE.RawShaderMaterial)
           .uniforms;
@@ -904,7 +904,7 @@ export default function LiquidEther({
           this.fbos[key] = new THREE.WebGLRenderTarget(
             this.fboSize.x,
             this.fboSize.y,
-            opts
+            opts,
           );
         }
       }
@@ -956,11 +956,11 @@ export default function LiquidEther({
       calcSize() {
         const width = Math.max(
           1,
-          Math.round(this.options.resolution * Common.width)
+          Math.round(this.options.resolution * Common.width),
         );
         const height = Math.max(
           1,
-          Math.round(this.options.resolution * Common.height)
+          Math.round(this.options.resolution * Common.height),
         );
         this.cellScale.set(1 / width, 1 / height);
         this.fboSize.set(width, height);
@@ -1022,7 +1022,7 @@ export default function LiquidEther({
               palette: { value: paletteTex },
               bgColor: { value: bgVec4 },
             },
-          })
+          }),
         );
         this.scene.add(this.output);
       }
@@ -1115,7 +1115,7 @@ export default function LiquidEther({
           if (this._onVisibility)
             document.removeEventListener(
               "visibilitychange",
-              this._onVisibility
+              this._onVisibility,
             );
           Mouse.dispose();
           if (Common.renderer) {
@@ -1179,7 +1179,7 @@ export default function LiquidEther({
           webglRef.current.pause();
         }
       },
-      { threshold: [0, 0.01, 0.1] }
+      { threshold: [0, 0.01, 0.1] },
     );
     io.observe(container);
     intersectionObserverRef.current = io;

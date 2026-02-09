@@ -21,6 +21,8 @@ interface TextPressureProps {
   minFontSizeMobile?: number;
   minFontSizeTablet?: number;
   minFontSizeDesktop?: number;
+  /** enable/disable the pressure effect (default: true) */
+  enabled?: boolean;
 }
 
 const TextPressure: React.FC<TextPressureProps> = ({
@@ -41,6 +43,7 @@ const TextPressure: React.FC<TextPressureProps> = ({
   minFontSizeMobile = 16,
   minFontSizeTablet = 20,
   minFontSizeDesktop = 24,
+  enabled = true,
 }) => {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const titleRef = useRef<HTMLHeadingElement | null>(null);
@@ -108,7 +111,10 @@ const TextPressure: React.FC<TextPressureProps> = ({
     return () => window.removeEventListener("resize", setSize);
   }, [scale, text, windowWidth]);
 
+  // Only set up mouse/touch tracking if effect is enabled
   useEffect(() => {
+    if (!enabled) return;
+
     const handleMouseMove = (e: MouseEvent) => {
       cursorRef.current.x = e.clientX;
       cursorRef.current.y = e.clientY;
@@ -135,9 +141,12 @@ const TextPressure: React.FC<TextPressureProps> = ({
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("touchmove", handleTouchMove);
     };
-  }, []);
+  }, [enabled]);
 
+  // Only run animation loop if effect is enabled
   useEffect(() => {
+    if (!enabled) return;
+
     let rafId: number;
     const animate = () => {
       mouseRef.current.x += (cursorRef.current.x - mouseRef.current.x) / 15;
@@ -161,7 +170,7 @@ const TextPressure: React.FC<TextPressureProps> = ({
           const getAttr = (
             distance: number,
             minVal: number,
-            maxVal: number
+            maxVal: number,
           ) => {
             const val = maxVal - Math.abs((maxVal * distance) / maxDist);
             return Math.max(minVal, val + minVal);
@@ -182,7 +191,7 @@ const TextPressure: React.FC<TextPressureProps> = ({
 
     animate();
     return () => cancelAnimationFrame(rafId);
-  }, [width, weight, italic, alpha, chars.length]);
+  }, [enabled, width, weight, italic, alpha, chars.length]);
 
   return (
     <div

@@ -3,9 +3,13 @@ import TextPressure from "./TextPressure";
 
 interface TextPressureComponentProps {
   text: string;
+  enabled?: boolean;
 }
 
-const TextPressureComponent: FC<TextPressureComponentProps> = ({ text }) => {
+const TextPressureComponent: FC<TextPressureComponentProps> = ({
+  text,
+  enabled = true,
+}) => {
   return (
     <div className="flex w-full flex-col items-center justify-center">
       <div className="w-full text-center relative">
@@ -21,6 +25,7 @@ const TextPressureComponent: FC<TextPressureComponentProps> = ({ text }) => {
           minFontSizeDesktop={10}
           minFontSizeMobile={24}
           minFontSizeTablet={52}
+          enabled={enabled}
         />
       </div>
     </div>

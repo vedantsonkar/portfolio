@@ -9,8 +9,12 @@ const Banner: FC = () => {
         <LiquidEther />
       </div>
       <div className="flex flex-col items-center justify-center h-full w-full gap-y-6 md:gap-y-8 select-none">
-        <TextPressureComponent text="Building smooth experiences," />
-        <TextPressureComponent text="one pixel at a time." />
+        <TextPressureComponent
+          text="Building smooth experiences,"
+          enabled={false}
+        />
+
+        <TextPressureComponent text="one pixel at a time." enabled={false} />
       </div>
 
       <div className="absolute bottom-0 left-0 w-full h-36 pointer-events-none bg-gradient-to-t from-[#fff] dark:from-[#0a0a0a] to-transparent"></div>
