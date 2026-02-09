@@ -160,7 +160,7 @@ export default function StackCarousel({
   return (
     <div className={`w-full space-y-4 md:space-y-6 ${className || ""}`}>
       {/* Row 1 - scrolls left */}
-      <ScrollingRow techStack={row1} direction="left" duration={30} />
+      <ScrollingRow techStack={row1} direction="left" duration={35} />
       {/* Divider line with fade effect */}
       <div className="relative w-full">
         {/* Left fade mask */}

@@ -370,10 +370,31 @@ export const techStack: TechStack[] = [
     category: "devops",
   },
   {
+    name: "Jira",
+    icon: "jira",
+    url: "https://www.atlassian.com/software/jira",
+    color: "#0052CC",
+    category: "devops",
+  },
+  {
+    name: "Bitbucket",
+    icon: "bitbucket",
+    url: "https://bitbucket.org",
+    color: "#0052CC",
+    category: "devops",
+  },
+  {
     name: "Git",
     icon: "git",
     url: "https://git-scm.com",
     color: "#F05032",
+    category: "devops",
+  },
+  {
+    name: "Vercel",
+    icon: "vercel",
+    url: "https://vercel.com",
+    color: "#000000",
     category: "devops",
   },
   // Testing
